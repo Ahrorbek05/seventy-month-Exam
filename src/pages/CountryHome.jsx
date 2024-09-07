@@ -33,7 +33,7 @@ function CountryHome() {
 
     return (
         <div className={`app ${darkMode ? 'dark' : ''}`}>
-            <header className="app-header flex justify-between shadow-md items-center py-4 px-6 bg-white dark:bg-gray-800">
+            <header className="app-header flex justify-between shadow-md items-center py-4 px-24 bg-white dark:bg-gray-800">
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Where in the world?</h1>
                 <button
                     onClick={toggleDarkMode}
@@ -42,7 +42,7 @@ function CountryHome() {
                 </button>
             </header>
 
-            <div className="search-region-container mx-4 mb-8 mt-8 flex flex-col gap-4 sm:flex-row justify-between items-center">
+            <div className="search-region-container mx-24 mb-8 mt-8 flex flex-col gap-4 sm:flex-row justify-between items-center">
                 <input
                     className="p-4 border-2 w-full sm:w-[460px] rounded-md outline-none shadow-md dark:bg-gray-700 dark:text-white"
                     type="search"
@@ -70,10 +70,10 @@ function CountryHome() {
                     <p className="text-center text-red-500 dark:text-red-400">Failed to load countries.</p>
                 ) : (
                     <>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        <div className="grid px-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                             {currentCountries.map((country) => (
                                 <Link to={`/country/${country.name.common}`} key={country.name.common}>
-                                    <div className="card bg-white w-[350px] dark:bg-gray-800 cursor-pointer shadow-xl transition transform hover:scale-105 duration-300">
+                                    <div className="card bg-white w-[310px] dark:bg-gray-800 cursor-pointer shadow-xl transition transform hover:scale-105 duration-300">
                                         <figure>
                                             <img src={country.flags.png} alt={country.flags.alt} className="w-full h-48 object-cover" />
                                         </figure>

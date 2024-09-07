@@ -16,22 +16,22 @@ function CountryDetails() {
     return <p className="text-center text-red-500">Country not found!</p>;
   }
 
-function handleBorderClick(border) {
-    const borderSlug = typeof border === 'object' ? border : border;
-    const borderCountry = filteredCountries.find(c => c.slug === borderSlug);
+  function handleBorderClick(border) {
+    const borderCountry = filteredCountries.find(c => c.border === border);
     
     if (borderCountry) {
       setSelectedCountry(borderCountry);
       setIsModalOpen(true);
     }
-  };
+  }
+  
 
   const borderNames = country.borders ? country.borders.map(border => typeof border.slug === 'object' ? border.slug : border.slug) : [];
   
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <header className={`flex justify-between shadow-md items-center py-4 px-6 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+      <header className={`flex justify-between shadow-md items-center py-4 px-12 ${darkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
         <h1 className={`text-2xl font-bold`}>Where in the world?</h1>
         
       </header>
